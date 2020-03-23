@@ -11,6 +11,7 @@ RUN npm run build
 # specifying a second base image indicates the end of the
 # previous build step and the beginning of the next step
 FROM nginx
+EXPOSE 80
 COPY --from=builder /app/build /usr/share/nginx/html
 # default command of nginx container starts up nginx
 # so we don't need to add anything here
